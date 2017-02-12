@@ -82,8 +82,7 @@ var education = {
       var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
       var formattedMajors = HTMLschoolMajor.replace('%data%', education.schools[school].majors);
 
-      $('.education-entry:last').append(formattedSchool);
-      $('.education-entry:first a').append(formattedDegree);
+      $('.education-entry:last').append(formattedSchool + formattedDegree);
       $('.education-entry:last').append(formattedDates);
       $('.education-entry:last').append(formattedLocation);
       $('.education-entry:last').append(formattedMajors);
@@ -124,6 +123,21 @@ var work = {
     }
   ],
   display : function() {
+    $('#workExperience').append(HTMLworkStart);
+
+    for (job in work.jobs) {
+      var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer).replace('#', 'http://www.cohaesus.co.uk');
+      var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
+      var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
+      var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
+      var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
+
+
+      $('.work-entry').append(formattedEmployer + formattedTitle);
+      $('.work-entry').append(formattedDates);
+      $('.work-entry').append(formattedLocation);
+      $('.work-entry').append(formattedDescription);
+    }
   }
 };
 
@@ -142,3 +156,4 @@ var projects = {
 
 bio.display();
 education.display();
+work.display();
