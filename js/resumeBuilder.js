@@ -31,12 +31,11 @@ var bio = {
 
         $('#header').prepend(formattedRole);
         $('#header').prepend(formattedName);
-        $('#topContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+        $('#topContacts, #footerContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
         $('#header').append(formattedBioPic);
         $('#header').append(formattedWelcome);
         $('#header').append(HTMLskillsStart);
         $('#skills').append(formattedSkills);
-        $('#footerContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
     }
 };
 
