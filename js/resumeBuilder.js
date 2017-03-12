@@ -36,6 +36,7 @@ var bio = {
         $('#header').append(formattedWelcome);
         $('#header').append(HTMLskillsStart);
         $('#skills').append(formattedSkills);
+        $('#footerContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
     }
 };
 
@@ -167,9 +168,3 @@ $('#mapDiv').append(googleMap);
 education.display();
 projects.display();
 work.display();
-
-var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-$('#footerContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
